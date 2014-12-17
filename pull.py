@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import urllib, json
-author = 'SiegfriedLaw'
+print "Channel?",
+author = raw_input()
 
 foundAll = False
 ind = 1
@@ -22,7 +23,7 @@ while not foundAll:
         #catch the case where the number of videos in the channel is a multiple of 50
         print "error"
         foundAll = True
-f = open('videos.html', 'w')
+f = open(author+'.html', 'w')
 for video in videos:
 
     ##print video['title']['$t'] # video title
