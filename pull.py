@@ -37,7 +37,7 @@ videolist = videolistresp['items']
 firstvideo = videolist[ind]['snippet']['resourceId']['videoId']
 
 #3rd Part: Create HTML file
-file = open(author+'.html', 'w')
+file = open('playlist.html', 'w')
 file.write('<div class="responsive-video-list"><div class="featured-video"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/'+firstvideo+'?autoplay=0&amp;rel=0&amp;showinfo=0&amp;modestbranding=1&amp;autohide=1" frameborder="0" allowfullscreen id="FeaturedVideoID"></iframe></div><ul>')
 ind = 0
 for videos in videolist:
@@ -52,6 +52,6 @@ file.write('</ul></div>')
 #4th Part: Open HTML file with BBEdit
 print "Opening HMTL file ..."
 time.sleep(3)
-cmd = 'bbedit '+author+'.html'
+cmd = 'bbedit playlist.html'
 procc = subprocess.Popen(cmd , shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 procc.wait()
