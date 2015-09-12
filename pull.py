@@ -4,7 +4,7 @@ try:
     options, remainder = getopt.getopt(sys.argv[1:], 'u:i:h', ['user=', 'id=', 'help'])
 except getopt.GetoptError as err:
     print(err) 
-    print 'Use -i for id or -u for username'
+    print 'Use -i for id or -u for username \n i.e. pull.py -u dadelantado'
     sys.exit(2)
 
 for opt, arg in options:
@@ -16,7 +16,7 @@ for opt, arg in options:
             types = 'id'
             author = arg
     elif opt in ('-h', '--help'):
-        print 'Use -i for id or -u for username'
+        print 'Use -i for id or -u for username\n\n EXAMPLE:\n  pull.py -u dadelantado'
         sys.exit(2)
             
 apikey = 'AIzaSyA7s-mBPBU5snEKPZ7CAuLwIuvGa6hRGyc'
