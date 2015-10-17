@@ -3,7 +3,7 @@ import urllib, json, subprocess, time, sys, getopt
 try:
     options, remainder = getopt.getopt(sys.argv[1:], 'u:i:h', ['user=', 'id=', 'help'])
 except getopt.GetoptError as err:
-    print(err) 
+    print(err)
     print 'Use -i for id or -u for username \n i.e. pull.py -u dadelantado'
     sys.exit(2)
 
@@ -11,15 +11,15 @@ for opt, arg in options:
     if opt in ('-u', '--user'):
         types = 'forUsername'
         author = arg
-        
+
     elif opt in ('-i', '--id'):
             types = 'id'
             author = arg
     elif opt in ('-h', '--help'):
         print 'Use -i for id or -u for username\n\n EXAMPLE:\n  pull.py -u dadelantado'
         sys.exit(2)
-            
-apikey = 'AIzaSyA7s-mBPBU5snEKPZ7CAuLwIuvGa6hRGyc'
+
+apikey = YOUR_API_KEY_HERE
 ind = 0
 
 #1st Part: retreive uploads id, forUsername(with username) or id (channel id)
