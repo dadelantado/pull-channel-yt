@@ -1,10 +1,13 @@
 #!/usr/bin/python
+# TODO: Change to defs template pull-playlist-yt
 import urllib, json, subprocess, time, sys, getopt
+types = None
 try:
     options, remainder = getopt.getopt(sys.argv[1:], 'u:i:h', ['user=', 'id=', 'help'])
+
 except getopt.GetoptError as err:
     print(err)
-    print 'Use -i for id or -u for username \n i.e. pull.py -u dadelantado'
+    print 'Use -i for id or -u for username \n i.e. pull.py -u USERNAME'
     sys.exit(2)
 
 for opt, arg in options:
@@ -16,10 +19,15 @@ for opt, arg in options:
             types = 'id'
             author = arg
     elif opt in ('-h', '--help'):
-        print 'Use -i for id or -u for username\n\n EXAMPLE:\n  pull.py -u dadelantado'
+        print 'Use -i for id or -u for username\n\n EXAMPLE:\n  pull.py -u USERNAME'
         sys.exit(2)
 
-apikey = YOUR_API_KEY_HERE
+if types is None:
+    print 'Use -i for id or -u for username\n\n EXAMPLE:\n  pull.py -u USERNAME'
+    sys.exit(2)
+
+
+apikey = 'AIzaSyA7s-mBPBU5snEKPZ7CAuLwIuvGa6hRGyc'
 ind = 0
 
 #1st Part: retreive uploads id, forUsername(with username) or id (channel id)
